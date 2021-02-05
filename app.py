@@ -7,6 +7,8 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = "dev"
 
+
+# support api
 @app.route('/api/<string:oj_name>/<string:username>')
 def get_solved_list(oj_name, username):
     if oj_name not in SUPPORTED_OJ:
@@ -26,6 +28,8 @@ def get_supported_oj():
     return json.dumps(SUPPORTED_OJ)
 
 
+# frontend pages
+@app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
@@ -41,6 +45,7 @@ def statistics():
     return render_template("statistics.html")
 
 
+# support frontend api
 @app.route("/frontend/save", methods=['POST', 'GET'])
 def frontend_save():
     data = []

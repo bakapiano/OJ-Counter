@@ -2,14 +2,33 @@
 
 function create_row(text, solved)
 {
-    console.log(text, solved)
+    // console.log(text, solved)
+    text += ":"
+
     t = ""
     t += "<tr>"
-    t += "<td>"+text+":"+"</td>"
+    t += "<td>"+text+"</td>"
     t += "<td>"+String(solved)+"</td>"
     t += "</tr>"
-    console.log(t)
+    // console.log(t)
     $("table").append(t)
+}
+
+function replace_row(text, solved)
+{
+    // console.log(text, solved)
+    text += ":"
+    rows = $("tr")
+    console.log(rows)
+    for(var i=0;i<rows.length;i++)
+    {
+        console.log(rows[i].children[0].textContent)
+        if(rows[i].children[0].textContent == text && rows[i].children[1].textContent == "Querying...")
+        {
+            rows[i].children[1].textContent = String(solved)
+            return
+        }
+    }
 }
 
 var total_counter = {};
@@ -40,6 +59,7 @@ for (var i = 0; i < records.length; i++) {
     oj_name = records[i][0]
     username = records[i][1]
     // console.log(oj_name, username)
+    create_row(username+" on "+oj_name, "Querying...")
     ajax_list.push($.ajax({
         url: "/api/" + oj_name + "/" + username,
         type: "get",
@@ -50,13 +70,15 @@ for (var i = 0; i < records.length; i++) {
             var temp_list = this.url.split("/");
             var username = temp_list.pop();
             var oj_name = temp_list.pop();
-            create_row(username+" on "+oj_name, len)
+            replace_row(username+" on "+oj_name, len)
             total += len;
         }
     }));
 }
+
+create_row("Total solved", "Querying...")
 const p = Promise.all(ajax_list);
 p.then(res => {
-    create_row("TOTAL:", total)
+    replace_row("Total solved", total)
     console.log(total)
 })

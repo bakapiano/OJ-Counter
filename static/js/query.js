@@ -15,6 +15,9 @@ $("#query-btn").click(function () {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(query),
             dataType: "json",
+            success : function () {
+                window.location.replace("/statistics");
+            }
         });
     });
 });
