@@ -7,7 +7,7 @@ Demo: [oj-counter.bakapiano.site](https://oj-counter.bakapiano.site/)
 ## 概览
 
 + 使用 Docker 一键部署
-+ 爬虫在服务器端运行，无数据库
++ 查询时服务器端运行爬虫，无数据库
 
 ## API
 
