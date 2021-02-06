@@ -1,6 +1,6 @@
 # OJ-Counter
 
-基于 Python 和 Flask 的轻量级 OnlineJudge 过题数统计项目。
+基于 Python 和 Flask 的轻量级 OnlineJudge 过题数统计网站。
 
 Demo: [oj-counter.bakapiano.site](https://oj-counter.bakapiano.site/)
 
