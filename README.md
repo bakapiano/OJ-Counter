@@ -31,6 +31,25 @@ example: https://oj-counter.bakapiano.site/api/Luogu/zzq233
 
 ## 部署
 
+1. 安装 Docker
+
+https://docs.docker.com/get-docker/
+
+2. 安装 docker-compose
+
+```
+sudo apt-get python3-pip
+pip install docker-compose
+```
+
+3. 启动
+
+```
+docker-compose up -d
+```
+
+默认运行在 ```5000``` 端口上，可以在```docker-compose.yml```中修改。
+
 ## 贡献爬虫代码
 
 **你只需专注于爬虫代码的编写，在文件创建后其他部分（前端后端）都会被自动配置好。**
