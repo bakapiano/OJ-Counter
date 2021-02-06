@@ -41,8 +41,14 @@ https://docs.docker.com/get-docker/
 sudo apt-get python3-pip
 pip install docker-compose
 ```
+### 3. 克隆项目至本地
 
-### 3. 启动
+```
+git clone https://github.com/bakapiano/OJ-Counter
+cd OJ-Counter
+```
+
+### 4. 启动
 
 ```
 docker-compose up -d
