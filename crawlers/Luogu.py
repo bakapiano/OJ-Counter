@@ -10,7 +10,7 @@ headers = {
 
 class Crawler:
     oj_name = "Luogu"
-    oj_url = ""
+    oj_url = "https://www.luogu.com.cn/"
 
     def get_user_uid(self, username:str):
         url = "https://www.luogu.com.cn/api/user/search?keyword=" + username
@@ -28,6 +28,6 @@ class Crawler:
         soup = BeautifulSoup(requests.get(url, headers=headers).content, 'html.parser')
         data = json.loads(parse.unquote(str(soup.script).split("(")[2].split('"')[1]))
         for record in data["currentData"]['passedProblems']:
-            solved_list.add(record["pid"])
+            solved_list.add(self.oj_name+record["pid"])
 
         return list(solved_list)

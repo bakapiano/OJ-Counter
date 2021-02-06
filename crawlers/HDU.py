@@ -5,7 +5,7 @@ from urllib import parse
 
 class Crawler:
     oj_name = "HDU"
-    oj_url = ""
+    oj_url = "http://acm.hdu.edu.cn/"
 
     def get_solved_list(self, username: str) -> list:
         solved_list = set()
