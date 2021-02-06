@@ -4,30 +4,8 @@
 
 Demo: [oj-counter.bakapiano.site](https://oj-counter.bakapiano.site/)
 
-## 概览
-
 + 使用 Docker 一键部署
 + 查询时服务器端运行爬虫，无数据库
-
-## API
-
-返回结果均为 json 格式。
-
-### 查询支持的 OJ
-
-```/api/supported```
-
-返回支持的 OJ 列表。
-
-example: https://oj-counter.bakapiano.site/api/supported
-
-### 查询用户在某个 OJ 上的过题情况
-
-``/api/<oj_name>/<username>``
-
-在 data 段返回用户在该 OJ 上的过题列表，格式为 OJ名+题号，注意 oj_name 需与 ```/api/supported``` 中的 OJ 名称完全一致。
-
-example: https://oj-counter.bakapiano.site/api/Luogu/zzq233
 
 ## 部署
 
@@ -53,6 +31,26 @@ docker-compose up -d
 ```
 
 默认运行在 ```5000``` 端口上，可以在```docker-compose.yml```中修改。
+
+## API
+
+返回结果均为 json 格式。
+
+### 查询支持的 OJ
+
+```/api/supported```
+
+返回支持的 OJ 列表。
+
+example: https://oj-counter.bakapiano.site/api/supported
+
+### 查询用户在某个 OJ 上的过题情况
+
+``/api/<oj_name>/<username>``
+
+在 data 段返回用户在该 OJ 上的过题列表，格式为 OJ名+题号，注意 oj_name 需与 ```/api/supported``` 中的 OJ 名称完全一致。
+
+example: https://oj-counter.bakapiano.site/api/Luogu/zzq233
 
 ## 贡献爬虫代码
 
