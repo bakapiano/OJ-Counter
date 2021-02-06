@@ -41,8 +41,7 @@ sudo apt-get install docker
 ### 2. 安装 docker-compose
 
 ```
-sudo apt-get install python3
-sudo apt-get install python3-pip
+sudo apt-get install python3 python3-pip
 pip install docker-compose
 ```
 ### 3. 克隆项目至本地并运行
