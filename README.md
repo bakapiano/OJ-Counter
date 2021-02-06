@@ -33,10 +33,12 @@ example: https://oj-counter.bakapiano.site/api/Luogu/zzq233
 
 ## 贡献爬虫代码
 
+**你只需专注于爬虫代码的编写，在文件创建后其他部分（前端后端）都会被自动配置好。
+
 爬虫代码在项目 /crawlers 目录中，命名格式为 ```OJ名称.py```，爬虫编写格式如下：
 
 ```python
-import json, requests #请将用到的额外库加入到 requirement.txt中
+import json, requests #请将用到的额外库加入到 requirement.txt 中
 
 class Crawler: #类名固定为 Crawler
     oj_name = "AtCoder" #OJ名称，请保持与文件名一致。
