@@ -31,9 +31,12 @@ example: https://oj-counter.bakapiano.site/api/Luogu/zzq233
 
 ## 部署
 
-### 1. 安装 Docker
+### 1. 安装 docker
 
 https://docs.docker.com/get-docker/
+```
+sudo apt-get install docker
+```
 
 ### 2. 安装 docker-compose
 
@@ -41,16 +44,11 @@ https://docs.docker.com/get-docker/
 sudo apt-get python3-pip
 pip install docker-compose
 ```
-### 3. 克隆项目至本地
+### 3. 克隆项目至本地并运行
 
 ```
 git clone https://github.com/bakapiano/OJ-Counter
 cd OJ-Counter
-```
-
-### 4. 启动
-
-```
 docker-compose up -d
 ```
 
