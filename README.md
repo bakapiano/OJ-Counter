@@ -25,7 +25,7 @@ example: https://oj-counter.bakapiano.site/api/supported
 
 ``/api/<oj_name>/<username>``
 
-在 data 段返回用户在该 OJ 上的过题列表，格式为 OJ名+题号，注意 oj_name 需与 ```/api/supported``` 中的拼写完全一致。
+在 data 段返回用户在该 OJ 上的过题列表，格式为 OJ名+题号，注意 oj_name 需与 ```/api/supported``` 中的 OJ 名称完全一致。
 
 example: https://oj-counter.bakapiano.site/api/Luogu/zzq233
 
