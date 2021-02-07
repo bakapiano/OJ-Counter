@@ -1,12 +1,14 @@
-import json
+import json, os
 from flask import *
 from crawlers import SUPPORTED_OJ, CRAWLERS
 
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = "dev"
+if os.environ.get('SECRET_KEY') is None:
+    os.environ['SECRET_KEY'] = str(os.urandom(24))
 
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 # support api
 @app.route('/api/<string:oj_name>/<string:username>')
@@ -55,6 +57,7 @@ def frontend_save():
             if record != "":
                 data.append([name, record])
     session['data'] = data
+    session.permanent = True
     return json.dumps({"error": False})
 
 
