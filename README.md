@@ -27,7 +27,7 @@ pip install docker-compose
 ```
 git clone https://github.com/bakapiano/OJ-Counter
 cd OJ-Counter
-docker-compose 
+docker-compose build
 docker-compose up -d
 ```
 
